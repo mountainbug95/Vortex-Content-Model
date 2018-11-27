@@ -1,0 +1,108 @@
+---
+label: Post
+is_partial: false
+fields:
+  - type: text
+    name: title
+    label: Post Title
+    description: The text displayed at the top of the post banner
+    config:
+      required: true
+  - type: textarea
+    name: subtitle
+    label: Post Subtitle
+    description: The text displayed below the post title
+    config:
+      wysiwyg: true
+      schema:
+        format: markdown
+  - type: text
+    name: excerpt
+    label: Post Excerpt
+    description: 'The text displayed in the post thumbnail, in the posts section of pages'
+  - type: file
+    name: content_img_path
+    label: Content Image
+    description: The image displayed above the post content
+  - type: file
+    name: alt_img_path
+    label: Alternate Image Path
+    description: 'The image displayed in the post thumbnail, in the posts section of pages'
+  - type: datetime
+    name: date
+    label: Post Date
+    config:
+      required: true
+  - type: select
+    name: style
+    label: Post Style
+    description: Controls the background style of the post
+    config:
+      source:
+        type: custom
+      options:
+        - style1
+        - style2
+  - type: boolean
+    name: show_recent_posts
+    label: Show Recent Posts
+    description: Displays the recent posts section
+    default: false
+  - type: number
+    name: recent_post_count
+    label: Recent Posts Count
+    description: The number of recent posts to be displayed in the recent posts section
+    default: 6
+    config:
+      required: true
+  - type: boolean
+    name: show_contact_section
+    label: Show Contact Section
+    description: Displays the contact section at the bottom of the post
+    default: false
+  - type: field_group_list
+    name: page_sections
+    label: Post Sections
+    description: The Sections to be displayed after the post content
+    config:
+      labelField: title
+    fields:
+      - type: text
+        name: title
+        label: Section Title
+        description: The text displayed at the top of the section
+        config:
+          required: true
+      - type: textarea
+        name: content
+        label: Section Content
+        description: The text displayed below the section title
+        config:
+          wysiwyg: true
+          schema:
+            format: markdown
+      - type: field_group
+        name: action
+        label: Section Action Button
+        fields:
+          - type: include
+            name: include_action
+            label: Action
+            template: action
+  - type: text
+    name: layout
+    label: Layout
+    hidden: true
+    default: page
+    config:
+      required: true
+pages:
+  - _posts/2017-04-01-post-01.md
+  - _posts/2017-04-02-post-02.md
+  - _posts/2017-04-03-post-03.md
+  - _posts/2017-04-04-post-04.md
+  - _posts/2017-04-05-post-05.md
+  - _posts/2017-04-06-post-06.md
+  - _posts/2017-04-07-post-07.md
+  - _posts/2017-04-08-post-08.md
+  - _posts/2017-04-09-post-09.md

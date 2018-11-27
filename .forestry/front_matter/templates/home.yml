@@ -1,0 +1,79 @@
+---
+label: Home
+hide_body: true
+is_partial: false
+fields:
+  - type: text
+    name: title
+    label: Page Title
+    config:
+      required: true
+  - type: field_group
+    name: banner
+    label: Page Banner
+    description: The banner displayed at the top of the landing page
+    fields:
+      - type: textarea
+        name: title
+        label: Banner Title
+        description: The text displayed in the page banner
+        config:
+          required: true
+      - type: field_group
+        name: bg_img
+        label: Banner Background Image
+        fields:
+          - type: file
+            name: path
+            label: Image
+          - type: select
+            name: data Position
+            label: Image Data Position
+            description: The position of the background image in its container
+            config:
+              source:
+                type: custom
+              options:
+                - left
+                - right
+                - center
+      - type: field_group_list
+        name: actions
+        label: Banner Action Buttons
+        config:
+          labelField: label
+        fields:
+          - type: include
+            name: include_action
+            label: Action
+            template: action
+  - type: number
+    name: recent_post_count
+    label: Recent Posts Count
+    description: The number of recet posts to display in the recent posts section
+    default: 9
+    config:
+      required: true
+  - type: boolean
+    name: show_contact_section
+    label: Show Contact Section
+    description: >-
+      Displays the contact section (defined in the config) at the bottom of the
+      page
+    default: false
+  - type: blocks
+    name: sections
+    label: Sections
+    description: Home Sections
+    template_types:
+      - features
+      - home_posts
+  - type: text
+    name: layout
+    label: Layout
+    hidden: true
+    default: home
+    config:
+      required: true
+pages:
+  - index.md

@@ -1,0 +1,42 @@
+---
+label: Recent Posts Section
+hide_body: true
+is_partial: true
+display_field: title
+fields:
+  - type: textarea
+    name: title
+    label: Section Title
+    description: The text displayed at the top of the section
+    default: Lacinia egestas amet tincidunt vitae venenatis
+    config:
+      required: true
+  - type: textarea
+    name: subtitle
+    label: Page Subtitle
+    description: The text displayed below the page title
+    default: >-
+      Ac mollis metus. Nulla tristique urna sit amet sapien placerat euismod.
+      Suspendisse eget viverra ex. Nunc vel justo lectus. Suspendisse potenti.
+      Phasellus turpis augue, fringilla ut nisi vel placerat.
+    config:
+      wysiwyg: true
+      schema:
+        format: markdown
+  - type: select
+    name: style
+    label: Section Style
+    description: The background color of the section
+    default: style1
+    config:
+      source:
+        type: custom
+      options:
+        - style1
+        - style2
+  - type: text
+    name: component
+    hidden: true
+    default: home_posts.html
+    config:
+      required: true

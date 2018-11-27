@@ -1,0 +1,17 @@
+<div class="inner">
+    <div class="posts">
+        {% assign slice_length = include.page.recent_post_count | minus: 0 %}
+        {% assign recent_posts = include.site.posts | sort: 'date' | reverse | slice: 0, slice_length %}
+        {% for post in recent_posts %}
+            <article>
+                {% if post.alt_img_path %}
+                    <a href="#" class="image filtered"><img src="{{ post.alt_img_path | relative_url }}" alt="" /></a>
+                {% endif %}
+                <p><strong>{{ post.title }}</strong> {{ post.excerpt }}</p>
+                <ul class="actions special">
+                    <li><a href="{{ post.url | relative_url }}" class="button small next">Details</a></li>
+                </ul>
+            </article>
+        {% endfor %}
+    </div>
+</div>

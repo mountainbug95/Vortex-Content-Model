@@ -1,0 +1,15 @@
+---
+layout: base
+---
+
+    {% include header.html %}
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+        {{ content }}
+        {% if page.show_contact_section %}
+            {% include contact.html %}
+        {% endif %}
+    </div>
+    
+    {% include footer.html %}

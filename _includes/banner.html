@@ -1,0 +1,18 @@
+<!-- Banner -->
+<section class="banner">
+    {% if page.banner.bg_img %}
+        <div class="image" data-position="{{ page.banner.bg_img.data_position }}">
+            <img src="{{ page.banner.bg_img.path | relative_url }}" alt="" />
+        </div>
+    {% endif %}
+    <div class="content">
+        <h1>{{ page.banner.title | newline_to_br }}</h1>
+        {% if page.banner.actions %}
+            <ul class="actions special">
+                {% for action in page.banner.actions %}
+                <li><a href="{% assign expr_1 = action.url | starts_with: '#' %}{% if expr_1 %}{{ action.url }}{% else %}{{ action.url | link | relative_url }}{% endif %}" class="button{% if action.is_primary %} primary{% endif %}{% if action.is_scrolly %} scrolly{% endif %}{% if action.has_arrow %} next{% endif %}">{{ action.label }}</a></li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+</section>

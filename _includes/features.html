@@ -1,0 +1,32 @@
+<!-- Section -->
+<section class="main {{ include.section.style }}">
+    <header class="small">
+        <h2>{{ include.section.title | newline_to_br }}</h2>
+        {{ include.section.subtitle | markdownify }}
+    </header>
+    {% if include.section.home_img %}
+        <div class="image filtered" data-position="{{ include.section.home_img.data_position }}">
+            <img src="{{ include.section.home_img.path | relative_url }}" alt="" />
+        </div>
+    {% endif %}
+    <div class="features">
+        {% for feature in include.section.features %}
+            <section>
+                {% if feature.enable_icon %}
+                    <span class="icon {{ feature.icon }} major {{ feature.icon_accent }}"></span>
+                {% endif %}
+                <h3>{{ feature.title }}</h3>
+                {{ feature.subtitle | markdownify }}
+            </section>
+        {% endfor %}
+    </div>
+    {% if include.section.actions %}
+        <footer>
+            <ul class="actions special">
+                {% for action in include.section.actions %}
+                    <li><a href="{% assign expr_1 = action.url | starts_with: '#' %}{% if expr_1 %}{{ action.url }}{% else %}{{ action.url | link | relative_url }}{% endif %}" class="button{% if action.is_primary %} primary{% endif %}{% if action.is_scrolly %} scrolly{% endif %}{% if action.has_arrow %} next{% endif %}">{{ action.label }}</a></li>
+                {% endfor %}
+            </ul>
+        </footer>
+    {% endif %}
+</section>

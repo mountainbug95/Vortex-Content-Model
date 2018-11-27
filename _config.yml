@@ -1,0 +1,59 @@
+title: Vortex
+baseurl: /
+header:
+  logo: <strong>Vortex</strong>
+contact:
+  title: Get in touch
+  subtitle: >-
+    Elit dignissim nullam sagittis faucibus dui. Morbi vel nibh mauris. Sed
+    convallis, odio ac posuere bibendum, odio elit bibendum magna, eu tempor
+    diam nulla nec felis. Cras convallis tellus ac justo.
+  style: style2
+  social_links:
+    - title: Twitter
+      icon: fa-twitter
+      link_url: '#'
+    - title: Facebook
+      icon: fa-facebook
+      link_url: '#'
+    - title: Instagram
+      icon: fa-instagram
+      link_url: '#'
+    - title: Phone
+      icon: fa-phone
+      link_url: '#'
+    - title: Email
+      icon: fa-envelope
+      link_url: '#'
+footer:
+  copyright: Copyright &copy; Untitled. All rights reserved.
+palette: blue
+palettes:
+  blue:
+    sass:
+      accent1: '#a2cedc'
+      accent2: '#93b5dc'
+      accent3: '#a3a9e7'
+      accent4: '#aa8fff'
+      accent5: '#65c1d8'
+  green:
+    sass:
+      accent1: '#71aca0'
+      accent2: '#a7b58f'
+      accent3: '#6e9e64'
+      accent4: '#efc278'
+      accent5: '#4baf7f'
+  magenta:
+    sass:
+      accent1: '#a480ff'
+      accent2: '#c09cd3'
+      accent3: '#e59dc4'
+      accent4: '#ff8f83'
+      accent5: '#78a8f1'
+sass:
+  indentWidth: 4
+  style: nested
+  precision: 10
+plugins:
+  - jekyll-menus
+permalink: '/posts/:slug:output_ext'

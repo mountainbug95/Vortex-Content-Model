@@ -1,0 +1,38 @@
+---
+layout: body
+---
+
+    <!-- Section -->
+    <section class="main {{ page.style }}">
+        <header class="small">
+            <h1>{{ page.title }}</h1>
+            {{ page.subtitle | markdownify }}
+        </header>
+        {% if page.content_img_path %}
+            <div class="image filtered" data-position="center">
+                <img src="{{ page.content_img_path | relative_url }}" alt="" />
+            </div>
+        {% endif %}
+        <div class="inner">
+            {{ content }}
+            
+            {% if page.sections %}
+                {% for section in page.sections %}
+                    <hr />
+                    <h3>{{ section.title }}</h3>
+                    {{ section.content | markdownify }}
+                    
+                    {% if section.action %}
+                        <ul class="actions">
+                            <li><a href="{% assign expr_1 = section.action.url | starts_with: '#' %}{% if expr_1 %}{{ section.action.url }}{% else %}{{ section.action.url | link | relative_url }}{% endif %}" class="button{% if section.action.is_primary %} primary{% endif %}{% if section.action.is_scrolly %} scrolly{% endif %}{% if section.action.has_next %} next{% endif %}">{{ section.action.label }}</a></li>
+                        </ul>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+            
+        </div>
+        {% if page.show_recent_posts %}
+            
+            {% include posts.html site=site page=page %}
+        {% endif %}
+    </section>

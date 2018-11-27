@@ -1,0 +1,119 @@
+---
+label: Config
+hide_body: true
+is_partial: false
+fields:
+  - type: text
+    name: title
+    label: Title
+    description: Site title
+    config:
+      required: true
+  - type: field_group
+    name: header
+    label: Header Configuration
+    fields:
+      - type: text
+        name: logo
+        label: Header Logo
+        description: >-
+          The text displayed in the left side of the page header (may contain
+          HTML)
+        config:
+          required: true
+  - type: field_group
+    name: contact
+    label: Contact Configuration
+    fields:
+      - type: text
+        name: title
+        label: Contact Section Title
+        description: The bold text displayed at the top of the contact section
+        config:
+          required: true
+      - type: textarea
+        name: subtitle
+        label: Contact Section Subtitle
+        description: The text displayed below the contact section title
+        config:
+          wysiwyg: true
+          schema:
+            format: markdown
+      - type: select
+        name: style
+        label: Section Style
+        description: Sets the background color for the contact section
+        config:
+          source:
+            type: custom
+          options:
+            - style1
+            - style2
+      - type: field_group_list
+        name: social_links
+        label: Social Icons
+        description: >-
+          A list of social icons displayed along the bottom of the contact
+          section
+        config:
+          labelField: title
+        fields:
+          - type: text
+            name: title
+            label: Icon Title
+            config:
+              required: true
+          - type: text
+            name: icon
+            label: Icon
+            description: Font Awesome icon
+            config:
+              required: true
+          - type: text
+            name: link_url
+            label: URL
+  - type: field_group
+    name: footer
+    label: Footer Configuration
+    fields:
+      - type: text
+        name: copyright
+        label: Copyright Text
+        description: The copyright text displayed in the page footer
+  - type: select
+    name: palette
+    label: Color Palette
+    description: The color palette used for the site
+    config:
+      required: true
+      source:
+        type: custom
+      options:
+        - blue
+        - green
+        - magenta
+  - type: field_group
+    name: palettes
+    hidden: true
+    fields:
+      - type: field_group
+        name: blue
+        fields:
+          - type: include
+            name: include_palette
+            label: Palette
+            template: palette
+      - type: field_group
+        name: green
+        fields:
+          - type: include
+            name: include_palette
+            label: Palette
+            template: palette
+      - type: field_group
+        name: magenta
+        fields:
+          - type: include
+            name: include_palette
+            label: Palette
+            template: palette

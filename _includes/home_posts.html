@@ -1,0 +1,10 @@
+{% if include.page.recent_post_count %}
+    <!-- Section -->
+    <section class="main {{ include.section.style }}">
+        <header class="small">
+            <h2>{{ include.section.title | newline_to_br }}</h2>
+            {{ include.section.subtitle | markdownify }}
+        </header>
+        {% include posts.html %}
+    </section>
+{% endif %}

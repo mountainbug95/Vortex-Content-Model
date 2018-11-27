@@ -1,0 +1,158 @@
+---
+---
+
+// Misc.
+$misc: (
+    z-index-base:		10000
+);
+
+// Duration.
+$duration: (
+    menu:				0.5s,
+    transition:			0.2s,
+    banner:				0.875s
+);
+
+// Size.
+$size: (
+    border-radius:		0.325rem,
+    element-height:		2.75rem,
+    element-margin:		2rem
+);
+
+// Font.
+$font: (
+    family:				('Source Sans Pro', Helvetica, sans-serif),
+    family-fixed:		('Courier New', monospace),
+    weight:				300,
+    weight-bold:		600,
+    weight-extrabold:	900
+);
+
+// Palette.
+{% assign palette = site.palettes[site.palette].sass %}
+$palette: (
+    bg:					#ffffff,
+    bg-alt:				#f2f5fa,
+    bg-shadow:			rgba(desaturate(darken(#f2f5fa, 25), 15), 0.325),
+    fg:					#7a7d86,
+    fg-bold:			#7a7d86,
+    fg-light:			rgba(#7a7d86,0.75),
+    border:				#dde1eb,
+    border-bg:			rgba(#dde1eb,0.175),
+    border-bg-alt:		rgba(#dde1eb,0.275),
+    accent1:			{{ palette.accent1 }},
+    accent2:			{{ palette.accent2 }},
+    accent3:			{{ palette.accent3 }},
+    accent4:			{{ palette.accent4 }},
+    accent5:			{{ palette.accent5 }},
+    highlight:			{{ palette.accent3 }},
+
+    invert: (
+        bg:				darken(desaturate(mix(mix({{ palette.accent1 }}, {{ palette.accent4 }}, 50%), {{ palette.accent5 }}, 50%), 15), 8),
+        bg-alt:			#917aa9,
+        bg-shadow:		rgba(desaturate(darken(#7a7d86, 25), 15), 0.325),
+        fg:				#ffffff,
+        fg-bold:		#ffffff,
+        fg-light:		rgba(255,255,255,0.75),
+        border:			rgba(255,255,255,0.35),
+        border-bg:		rgba(255,255,255,0.075),
+        border-bg-alt:	rgba(255,255,255,0.175),
+        accent1:		lighten({{ palette.accent1 }}, 10),
+        accent2:		lighten({{ palette.accent2 }}, 10),
+        accent3:		lighten({{ palette.accent3 }}, 10),
+        accent4:		lighten({{ palette.accent4 }}, 10),
+        accent5:		lighten({{ palette.accent5 }}, 10),
+        highlight:		#ffffff
+    ),
+
+);
+@import 'libs/functions';
+@import 'libs/mixins';
+@import 'libs/vendor';
+@import 'libs/breakpoints';
+@import 'libs/html-grid';
+@import 'libs/fixed-grid';
+@import 'font-awesome.min.css';
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,600,900,300italic,600italic,900italic');
+
+/*
+	Vortex by Pixelarity
+	pixelarity.com | hello@pixelarity.com
+	License: pixelarity.com/license
+*/
+
+// Breakpoints.
+
+	@include breakpoints((
+		xlarge:   ( 1281px,  1680px ),
+		large:    ( 981px,   1280px ),
+		medium:   ( 737px,   980px  ),
+		small:    ( 481px,   736px  ),
+		xsmall:   ( 361px,   480px  ),
+		xxsmall:  ( null,    360px  )
+	));
+
+// Mixins.
+
+	@mixin color($p) {
+		@include color-typography($p);
+		@include color-box($p);
+		@include color-button($p);
+		@include color-form($p);
+		@include color-icon($p);
+		@include color-list($p);
+		@include color-table($p);
+		@include color-features($p);
+	}
+
+// Base.
+
+	@import 'base/reset';
+	@import 'base/page';
+	@import 'base/typography';
+
+// Component.
+
+	@import 'components/row';
+	@import 'components/box';
+	@import 'components/button';
+	@import 'components/form';
+	@import 'components/icon';
+	@import 'components/image';
+	@import 'components/list';
+	@import 'components/actions';
+	@import 'components/icons';
+	@import 'components/section';
+	@import 'components/table';
+	@import 'components/banner';
+	@import 'components/features';
+	@import 'components/posts';
+	@import 'components/main';
+
+// Layout.
+
+	@import 'layout/header';
+	@import 'layout/footer';
+	@import 'layout/wrapper';
+	@import 'layout/navPanel';
+
+	.fx-type {
+		.char {
+			@include vendor('transition', 'all 0.125s ease-in-out');
+			opacity: 1;
+
+			&.inactive {
+				opacity: 0.25;
+				font-weight: _font(weight);
+			}
+		}
+
+		.cursor {
+			opacity: 0.25;
+			font-weight: _font(weight);
+			display: inline-block;
+			width: 2rem;
+			@include vendor('transform', 'scale(1.125)');
+		}
+	}
