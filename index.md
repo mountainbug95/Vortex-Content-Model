@@ -77,7 +77,7 @@ sections:
         icon: fa-files-o
         icon_accent: accent3
     component: features.html
-    type: features
+    template: features
   - title: Lacinia egestas amet tincidunt vitae venenatis
     subtitle: >-
       Ac mollis metus. Nulla tristique urna sit amet sapien placerat euismod.
@@ -85,7 +85,7 @@ sections:
       Phasellus turpis augue, fringilla ut nisi vel placerat.
     style: style1
     component: home_posts.html
-    type: home_posts
+    template: home_posts
 menus:
   main:
     title: Home
