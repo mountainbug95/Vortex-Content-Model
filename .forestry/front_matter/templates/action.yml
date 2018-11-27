@@ -22,3 +22,15 @@ fields:
     label: IS Primary
     description: Gives the button a primary color scheme
     default: false
+  - type: boolean
+    name: has_arrow
+    label: Has Arrow
+    description: Displays an arrow beside the button label
+    hidden: true
+    default: false
+  - type: boolean
+    name: has_next
+    label: Has Arrow
+    description: Displays an arrow beside the button label
+    hidden: true
+    default: false
