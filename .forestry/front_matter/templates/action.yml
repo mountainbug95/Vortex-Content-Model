@@ -26,11 +26,4 @@ fields:
     name: has_arrow
     label: Has Arrow
     description: Displays an arrow beside the button label
-    hidden: true
-    default: false
-  - type: boolean
-    name: has_next
-    label: Has Arrow
-    description: Displays an arrow beside the button label
-    hidden: true
     default: false
