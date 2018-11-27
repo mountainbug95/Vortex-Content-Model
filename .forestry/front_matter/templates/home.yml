@@ -27,7 +27,7 @@ fields:
             name: path
             label: Image
           - type: select
-            name: data Position
+            name: data_position
             label: Image Data Position
             description: The position of the background image in its container
             config:
