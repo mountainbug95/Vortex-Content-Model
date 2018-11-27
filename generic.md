@@ -59,7 +59,7 @@ page_sections:
     action:
       label: Magna Imperdiet
       url: generic.md
-      has_next: true
+      has_arrow: true
       is_scrolly: false
       is_primary: false
 menus:
