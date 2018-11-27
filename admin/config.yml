@@ -124,7 +124,7 @@ collections:
                     widget: image
                     required: false
                     label: Image
-                  - name: data Position
+                  - name: data_position
                     widget: select
                     required: false
                     label: Image Data Position
@@ -161,6 +161,12 @@ collections:
                     label: IS Primary
                     default: false
                     hint: Gives the button a primary color scheme
+                  - name: has_arrow
+                    widget: boolean
+                    required: false
+                    label: Has Arrow
+                    default: false
+                    hint: Displays an arrow beside the button label
           - name: recent_post_count
             widget: number
             required: true
@@ -249,6 +255,12 @@ collections:
                         label: IS Primary
                         default: false
                         hint: Gives the button a primary color scheme
+                      - name: has_arrow
+                        widget: boolean
+                        required: false
+                        label: Has Arrow
+                        default: false
+                        hint: Displays an arrow beside the button label
                   - name: style
                     widget: select
                     required: false
@@ -435,6 +447,12 @@ collections:
                 label: IS Primary
                 default: false
                 hint: Gives the button a primary color scheme
+              - name: has_arrow
+                widget: boolean
+                required: false
+                label: Has Arrow
+                default: false
+                hint: Displays an arrow beside the button label
       - name: layout
         widget: hidden
         required: true
@@ -557,6 +575,12 @@ collections:
                 label: IS Primary
                 default: false
                 hint: Gives the button a primary color scheme
+              - name: has_arrow
+                widget: boolean
+                required: false
+                label: Has Arrow
+                default: false
+                hint: Displays an arrow beside the button label
       - name: layout
         widget: hidden
         required: true
