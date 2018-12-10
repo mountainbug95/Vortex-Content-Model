@@ -36,6 +36,7 @@ fields:
         - style2
   - type: text
     name: component
+    label: Section Component
     hidden: true
     default: home_posts.html
     config:
