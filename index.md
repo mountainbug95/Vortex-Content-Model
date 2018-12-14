@@ -41,6 +41,7 @@ sections:
         enable_icon: true
         icon: fa-camera-retro
         icon_accent: accent2
+        type: feature_with_icon
       - title: Aptent
         subtitle: >-
           Ut ultrices hendrerit dignissim euismod. Fusce a sem interdum,
@@ -48,6 +49,7 @@ sections:
         enable_icon: true
         icon: fa-diamond
         icon_accent: accent3
+        type: feature_with_icon
       - title: Magna
         subtitle: >-
           Donec hendrerit, orci nec eleifend auctor, ipsum pharetra leo, eu
@@ -55,6 +57,7 @@ sections:
         enable_icon: true
         icon: fa-bar-chart
         icon_accent: accent4
+        type: feature_with_icon
       - title: Tempus
         subtitle: >-
           Faucibus ligula, ac blandit purus arcu non sed nibh. Nam aliquam in
@@ -62,6 +65,7 @@ sections:
         enable_icon: true
         icon: fa-rss
         icon_accent: accent1
+        type: feature_with_icon
       - title: Aliquam
         subtitle: >-
           Fermentum integer laoreet sollicitudin tortor et consequat. Phasellus
@@ -69,6 +73,7 @@ sections:
         enable_icon: true
         icon: fa-commenting-o
         icon_accent: accent2
+        type: feature_with_icon
       - title: Euismod
         subtitle: >-
           Quisque nec mollis turpis. Phasellus sit amet magna ut quam lacinia
@@ -76,6 +81,7 @@ sections:
         enable_icon: true
         icon: fa-files-o
         icon_accent: accent3
+        type: feature_with_icon
     component: features.html
     template: features
   - title: Lacinia egestas amet tincidunt vitae venenatis

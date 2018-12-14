@@ -12,7 +12,7 @@
     <div class="features">
         {% for feature in include.section.features %}
             <section>
-                {% if feature.enable_icon %}
+                {% if feature.type == 'feature_with_icon' %}
                     <span class="icon {{ feature.icon }} major {{ feature.icon_accent }}"></span>
                 {% endif %}
                 <h3>{{ feature.title }}</h3>
